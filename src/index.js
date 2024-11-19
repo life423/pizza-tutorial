@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import pizzaData from './data'
 
-  
-
 function App() {
     return (
         <div className='container'>
