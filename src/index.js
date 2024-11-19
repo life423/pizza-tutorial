@@ -73,7 +73,7 @@ function Menu() {
 
             <Pizza
                 name='Pizza Spinaci'
-                ingredient='Tomato, mozarella, spinach, and ricotta cheese'
+                ingredients='Tomato, mozarella, spinach, and ricotta cheese'
                 photoName='pizzas/spinaci.jpg'
                 price='10'
             />
@@ -105,8 +105,6 @@ function Footer() {
         </footer>
     )
 }
-
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
