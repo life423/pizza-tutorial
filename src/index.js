@@ -49,7 +49,7 @@ const pizzaData = [
 
 function App() {
     return (
-        <div>
+        <div className='container'>
             <h1>Hello, World!</h1>
             <Header />
             <Menu />
@@ -60,18 +60,18 @@ function App() {
 
 function Header() {
     return (
-        <header>
-            <h1 style={{color: 'red', fontSize: '48px', textTransform: 'uppercase'}}>Fast React Pizza Company</h1>
-        </header>
+        <heade className='header'>
+            <h1>Fast React Pizza Company</h1>
+        </heade>
     )
 }
 
 function Menu() {
     return (
-        <div>
+        <main className='menu'>
             <h2>Menu</h2>
             <Pizza />
-        </div>
+        </main>
     )
 }
 
@@ -84,7 +84,7 @@ function Footer() {
     isOpen ? console.log('We are open') : console.log('We are closed')
 
     return (
-        <footer>
+        <footer className='footer'>
             <p>{new Date().toLocaleTimeString()}</p>
         </footer>
     )
@@ -94,7 +94,7 @@ function Pizza() {
     return (
         <div>
             <img src='pizzas/focaccia.jpg' alt='Focaccia' />
-            <h2>Pizza</h2>
+            <h3>Pizza</h3>
             <p>sfafds</p>
         </div>
     )
