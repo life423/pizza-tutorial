@@ -97,9 +97,9 @@ function Footer() {
     const hour = new Date().getHours();
     const openHour = 12;
     const closeHour = 22;
-    const isRestaurantOpen = hour >= openHour && hour < closeHour;
+    const isRestaurantOpen = hour >= openHour && hour <= closeHour;
 
-    isRestaurantOpen ? console.log('We are open') : console.log('We are closed');
+    isRestaurantOpen ? <p>'We are open'</p> : <p>'We are closed'</p>
     if (isRestaurantOpen) {
         console.log('We are open');
     } else {
