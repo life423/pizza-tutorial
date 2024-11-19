@@ -1,6 +1,6 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
 
 const pizzaData = [
     {
@@ -50,68 +50,71 @@ const pizzaData = [
 function App() {
     return (
         <div className='container'>
-            <h1>Hello, World!</h1>
             <Header />
             <Menu />
             <Footer />
         </div>
-    )
-}
+    );
+};
 
 function Header() {
     return (
-        <heade className='header'>
+        <header className='header'>
             <h1>Fast React Pizza Company</h1>
-        </heade>
-    )
-}
-
+        </header>
+    );
+};
 function Menu() {
     return (
         <main className='menu'>
             <h2>Menu</h2>
-
-            <Pizza
-                name='Pizza Spinaci'
-                ingredients='Tomato, mozarella, spinach, and ricotta cheese'
-                photoName='pizzas/spinaci.jpg'
-                price='10'
-            />  
-            
-
-
+            {pizzaData.map(pizza => (
+                <Pizza
+                    key={pizza.name}
+                    name={pizza.name}
+                    ingredients={pizza.ingredients}
+                    photoName={pizza.photoName}
+                    price={pizza.price}
+                />
+            ))}
         </main>
-    )
+    );
 }
 
 function Pizza({ name, ingredients, photoName, price }) {
     return (
         <div>
             <img src={photoName} alt={name} />
-            <h3>{name} {price}</h3>
+            <h3>
+                {name} ${price}
+            </h3>
             <p>{ingredients}</p>
         </div>
     )
 }
 
 function Footer() {
-    const hour = new Date().getHours()
-    const openHour = 12,
-        closeHour = 22
-    const isOpen = hour >= openHour && hour < closeHour
+    const hour = new Date().getHours();
+    const openHour = 12;
+    const closeHour = 22;
+    const isRestaurantOpen = hour >= openHour && hour < closeHour;
 
-    isOpen ? console.log('We are open') : console.log('We are closed')
-
+    isRestaurantOpen ? console.log('We are open') : console.log('We are closed');
+    if (isRestaurantOpen) {
+        console.log('We are open');
+    } else {
+        console.log('We are closed');
+    }
     return (
         <footer className='footer'>
             <p>{new Date().toLocaleTimeString()}</p>
         </footer>
-    )
+    );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'))
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <App />
     </React.StrictMode>
-)
+);
