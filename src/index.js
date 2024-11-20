@@ -24,13 +24,13 @@ function Menu() {
     return (
         <main className='menu'>
             <h2>Menu</h2>
-            {pizzaData.map(pizza => (
+            {pizzaData.map(({ name, ingredients, photoName, price }) => (
                 <Pizza
-                    key={pizza.name}
-                    name={pizza.name}
-                    ingredients={pizza.ingredients}
-                    photoName={pizza.photoName}
-                    price={pizza.price}
+                    key={name}
+                    name={name}
+                    ingredients={ingredients}
+                    photoName={photoName}
+                    price={price}
                 />
             ))}
         </main>
@@ -39,7 +39,7 @@ function Menu() {
 
 function Pizza({ name, ingredients, photoName, price }) {
     return (
-        <div>
+        <div className='Pizza'>
             <img src={photoName} alt={name} />
             <h3>
                 {name} ${price}
