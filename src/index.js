@@ -20,11 +20,11 @@ function Header() {
         </header>
     )
 }
-function Menu() {
-    return (
-        <main className='menu'>
-            <h2>Menu</h2>
-            {pizzaData.map(({ name, ingredients, photoName, price }) => (
+const Menu = () => (
+    <main className='menu'>
+        <h2>Menu</h2>
+        {pizzaData?.length ? (
+            pizzaData.map(({ name, ingredients, photoName, price }) => (
                 <Pizza
                     key={name}
                     name={name}
@@ -32,10 +32,13 @@ function Menu() {
                     photoName={photoName}
                     price={price}
                 />
-            ))}
-        </main>
-    )
-}
+            ))
+        ) : (
+            <p>No pizzas available at the moment.</p>
+        )}
+    </main>
+)
+
 
 function Pizza({ name, ingredients, photoName, price }) {
     return (
